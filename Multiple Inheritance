@@ -1,0 +1,33 @@
+// Interface 1
+interface A {
+    void methodA();
+}
+
+// Interface 2
+interface B {
+    void methodB();
+}
+
+// Class implementing both interfaces A and B
+class MyClass implements A, B {
+    @Override
+    public void methodA() {
+        System.out.println("Method A implementation");
+    }
+
+    @Override
+    public void methodB() {
+        System.out.println("Method B implementation");
+    }
+}
+
+public class MultipleInheritanceExample {
+    public static void main(String[] args) {
+        // Create an object of MyClass
+        MyClass obj = new MyClass();
+
+        // Call methods from interfaces A and B
+        obj.methodA();
+        obj.methodB();
+    }
+}
