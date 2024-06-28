@@ -1,0 +1,40 @@
+import java.io.*;
+
+public class FileOperationsExample {
+
+    public static void main(String[] args) {
+        // Path to input and output files
+        String inputFile = "input.txt";
+        String outputFile = "output.txt";
+
+        // Reading from file and writing to another file
+        try {
+            // FileReader and FileWriter for character streams
+            FileReader fileReader = new FileReader(inputFile);
+            FileWriter fileWriter = new FileWriter(outputFile);
+
+            // BufferedReader and BufferedWriter for efficiency
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+
+            String line;
+
+            // Reading lines from input file and writing to output file
+            while ((line = bufferedReader.readLine()) != null) {
+                bufferedWriter.write(line);
+                bufferedWriter.newLine(); // Adding newline character
+            }
+
+            // Closing streams
+            bufferedReader.close();
+            bufferedWriter.close();
+
+            System.out.println("File read and write operations completed.");
+
+        } catch (FileNotFoundException e) {
+            System.out.println("File not found: " + e.getMessage());
+        } catch (IOException e) {
+            System.out.println("IOException: " + e.getMessage());
+        }
+    }
+}
