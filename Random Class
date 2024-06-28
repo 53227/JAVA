@@ -1,0 +1,37 @@
+import java.util.Random;
+
+public class RandomExample {
+
+    public static void main(String[] args) {
+        // Creating an instance of Random class
+        Random random = new Random();
+
+        // Generating random integers
+        System.out.println("Random Integers:");
+        for (int i = 0; i < 5; i++) {
+            int randomNumber = random.nextInt(); // Generates random integer
+            System.out.println(randomNumber);
+        }
+
+        // Generating random integers between 0 and 100
+        System.out.println("\nRandom Integers between 0 and 100:");
+        for (int i = 0; i < 5; i++) {
+            int randomNumberInRange = random.nextInt(101); // Generates random integer between 0 and 100
+            System.out.println(randomNumberInRange);
+        }
+
+        // Generating random doubles between 0.0 (inclusive) and 1.0 (exclusive)
+        System.out.println("\nRandom Doubles between 0.0 and 1.0:");
+        for (int i = 0; i < 5; i++) {
+            double randomDouble = random.nextDouble(); // Generates random double between 0.0 and 1.0
+            System.out.println(randomDouble);
+        }
+
+        // Generating random booleans
+        System.out.println("\nRandom Booleans:");
+        for (int i = 0; i < 5; i++) {
+            boolean randomBoolean = random.nextBoolean(); // Generates random boolean
+            System.out.println(randomBoolean);
+        }
+    }
+}
