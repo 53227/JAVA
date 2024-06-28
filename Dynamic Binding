@@ -1,0 +1,39 @@
+// Parent class
+class Animal {
+    // Method to make sound
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog extends Animal {
+    // Override method to make sound specific to Dog
+    @Override
+    void makeSound() {
+        System.out.println("Dog barks");
+    }
+}
+
+// Another subclass inheriting from Animal
+class Cat extends Animal {
+    // Override method to make sound specific to Cat
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class DynamicBindingExample {
+    public static void main(String[] args) {
+        // Create objects of Animal, Dog, and Cat
+        Animal animal = new Animal();
+        Animal dog = new Dog(); // Parent reference but Dog object
+        Animal cat = new Cat(); // Parent reference but Cat object
+
+        // Calls overridden methods
+        animal.makeSound(); // Calls Animal's makeSound method
+        dog.makeSound(); // Calls Dog's overridden makeSound method
+        cat.makeSound(); // Calls Cat's overridden makeSound method
+    }
+}
