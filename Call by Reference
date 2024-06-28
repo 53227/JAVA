@@ -1,0 +1,36 @@
+public class CallByReferenceExample {
+
+    public static void main(String[] args) {
+        // Create an object
+        Person person = new Person("Alice");
+        System.out.println("Before calling method, person = " + person.getName());
+
+        // Call a method with an object reference
+        changeName(person);
+
+        System.out.println("After calling method, person = " + person.getName());
+    }
+
+    // Class representing a person with a name
+    static class Person {
+        private String name;
+
+        public Person(String name) {
+            this.name = name;
+        }
+
+        public String getName() {
+            return name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+    }
+
+    // Method to change the name of a Person object
+    public static void changeName(Person p) {
+        p.setName("Bob");
+        System.out.println("Inside method, person = " + p.getName());
+    }
+}
