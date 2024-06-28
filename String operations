@@ -1,0 +1,33 @@
+public class StringOperations {
+    public static void main(String[] args) {
+        String str1 = "Hello";
+        String str2 = "World";
+
+        // Concatenation
+        String concatenatedString = str1 + " " + str2;
+        System.out.println("Concatenated string: " + concatenatedString);
+
+        // Length
+        int length = concatenatedString.length();
+        System.out.println("Length of the string: " + length);
+
+        // Substring
+        String substring = concatenatedString.substring(6, 11); // Extract "World"
+        System.out.println("Substring: " + substring);
+
+        // Uppercase and lowercase
+        String uppercase = concatenatedString.toUpperCase();
+        String lowercase = concatenatedString.toLowerCase();
+        System.out.println("Uppercase string: " + uppercase);
+        System.out.println("Lowercase string: " + lowercase);
+
+        // String comparison
+        String str3 = "hello world";
+        System.out.println("Comparison with 'hello world': " + concatenatedString.equals(str3));
+
+        // Trimming whitespace
+        String str4 = "   Trim this string   ";
+        String trimmedString = str4.trim();
+        System.out.println("Trimmed string: '" + trimmedString + "'");
+    }
+}
