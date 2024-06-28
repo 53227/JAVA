@@ -1,0 +1,87 @@
+public class ExceptionHandlingExample {
+
+    public static void main(String[] args) {
+        try {
+            // Example 1: Arithmetic Exception
+            int result = 10 / 0; // Attempting to divide by zero
+            System.out.println("Result: " + result); // This line won't execute
+
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException caught: Division by zero");
+            // Optionally, handle the exception or log it
+            // e.printStackTrace(); // Uncomment to print stack trace
+
+        } finally {
+            System.out.println("Inside finally block"); // This block always executes
+        }
+
+        try {
+            // Example 2: ArrayIndexOutOfBoundsException
+            int[] array = {1, 2, 3};
+            System.out.println("Element at index 3: " + array[3]); // Accessing out of bounds index
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException caught: Index out of bounds");
+            // Optionally, handle the exception or log it
+            // e.printStackTrace(); // Uncomment to print stack trace
+
+        } finally {
+            System.out.println("Inside finally block"); // This block always executes
+        }
+
+        // Example 3: Handling exceptions outside try-catch blocks
+        try {
+            String str = null;
+            System.out.println(str.length()); // This line will throw NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("NullPointerException caught: Attempted to operate on null object");
+        }
+
+        // Example 4: Multiple catch blocks
+        try {
+            int[] numbers = {1, 2, 3};
+            System.out.println("Element at index 3: " + numbers[3]); // Accessing out of bounds index
+
+            int result = 10 / 0; // Attempting to divide by zero
+            System.out.println("Result: " + result); // This line won't execute
+
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("ArrayIndexOutOfBoundsException caught: Index out of bounds");
+
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException caught: Division by zero");
+
+        } catch (Exception e) {
+            System.out.println("Generic Exception caught");
+        }
+
+        // Example 5: Handling exceptions using try-with-resources (Java 7+)
+        try {
+            // Resource that needs to be closed automatically (e.g., file, database connection)
+            // Using try-with-resources to ensure resource is closed
+            tryWithResourcesExample();
+        } catch (Exception e) {
+            System.out.println("Exception in try-with-resources example: " + e.getMessage());
+        }
+    }
+
+    // Method to demonstrate try-with-resources
+    static void tryWithResourcesExample() throws Exception {
+        try (MyResource resource = new MyResource()) {
+            // Use the resource
+            resource.doSomething();
+        } // Automatically closes resource here
+    }
+
+    // Example custom resource class implementing AutoCloseable interface
+    static class MyResource implements AutoCloseable {
+        void doSomething() throws Exception {
+            System.out.println("Doing something with MyResource");
+        }
+
+        @Override
+        public void close() throws Exception {
+            System.out.println("Closing MyResource");
+        }
+    }
+}
