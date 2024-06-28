@@ -1,0 +1,25 @@
+// Outer class
+public class OuterClass {
+    
+    private int outerVar = 10;
+    private static int staticOuterVar = 20;
+    
+    // Inner class
+    class InnerClass {
+        void display() {
+            System.out.println("Inner class method accessing outerVar: " + outerVar);
+            System.out.println("Inner class method accessing staticOuterVar: " + staticOuterVar);
+        }
+    }
+    
+    // Method to create and use InnerClass
+    void createInnerClass() {
+        InnerClass inner = new InnerClass(); // Create an instance of InnerClass
+        inner.display(); // Call method of InnerClass
+    }
+    
+    public static void main(String[] args) {
+        OuterClass outer = new OuterClass(); // Create an instance of OuterClass
+        outer.createInnerClass(); // Call method to create and use InnerClass
+    }
+}
