@@ -1,0 +1,51 @@
+// Abstract class defining a shape
+abstract class Shape {
+    // Abstract method to calculate area (to be implemented by subclasses)
+    public abstract double calculateArea();
+}
+
+// Concrete subclass Circle inheriting from Shape
+class Circle extends Shape {
+    private double radius;
+
+    // Constructor to initialize the radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementation of abstract method to calculate area for Circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+// Concrete subclass Rectangle inheriting from Shape
+class Rectangle extends Shape {
+    private double length;
+    private double width;
+
+    // Constructor to initialize length and width
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementation of abstract method to calculate area for Rectangle
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+}
+
+public class AbstractionExample {
+    public static void main(String[] args) {
+        // Create objects of Circle and Rectangle
+        Circle circle = new Circle(5);
+        Rectangle rectangle = new Rectangle(4, 6);
+
+        // Calculate and print areas
+        System.out.println("Area of Circle: " + circle.calculateArea());
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+    }
+}
