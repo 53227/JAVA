@@ -1,0 +1,36 @@
+// Superclass (Parent class)
+class Animal {
+    void eat() {
+        System.out.println("Animal is eating...");
+    }
+}
+
+// Intermediate subclass inheriting from Animal
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog is barking...");
+    }
+}
+
+// Subclass inheriting from Dog
+class Labrador extends Dog {
+    void color() {
+        System.out.println("Labrador is golden in color.");
+    }
+}
+
+public class MultilevelInheritanceExample {
+    public static void main(String[] args) {
+        // Create an object of Labrador
+        Labrador labrador = new Labrador();
+
+        // Call methods from superclass Animal
+        labrador.eat(); // Inherited method from Animal
+
+        // Call methods from intermediate subclass Dog
+        labrador.bark(); // Inherited method from Dog
+
+        // Call method from subclass Labrador
+        labrador.color(); // Method specific to Labrador
+    }
+}
