@@ -1,0 +1,38 @@
+import java.util.*;
+
+public class EnumerationExample {
+
+    public static void main(String[] args) {
+        // Creating a Vector and adding elements
+        Vector<String> vector = new Vector<>();
+        vector.add("Java");
+        vector.add("Python");
+        vector.add("C++");
+
+        // Getting Enumeration from Vector
+        Enumeration<String> enumeration = vector.elements();
+
+        // Iterating through elements using Enumeration
+        System.out.println("Elements in Vector using Enumeration:");
+        while (enumeration.hasMoreElements()) {
+            String element = enumeration.nextElement();
+            System.out.println(element);
+        }
+
+        // Example with Hashtable
+        Hashtable<String, Integer> hashtable = new Hashtable<>();
+        hashtable.put("One", 1);
+        hashtable.put("Two", 2);
+        hashtable.put("Three", 3);
+
+        // Getting Enumeration from Hashtable keys
+        Enumeration<String> keys = hashtable.keys();
+
+        // Iterating through keys using Enumeration
+        System.out.println("\nKeys in Hashtable using Enumeration:");
+        while (keys.hasMoreElements()) {
+            String key = keys.nextElement();
+            System.out.println(key + " : " + hashtable.get(key));
+        }
+    }
+}
