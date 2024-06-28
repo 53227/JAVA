@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class IteratorExample {
+
+    public static void main(String[] args) {
+        // Example with ArrayList
+        List<String> list = new ArrayList<>();
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        // Getting Iterator from ArrayList
+        Iterator<String> iterator = list.iterator();
+
+        // Iterating through elements using Iterator
+        System.out.println("Elements in ArrayList using Iterator:");
+        while (iterator.hasNext()) {
+            String element = iterator.next();
+            System.out.println(element);
+        }
+
+        // Example with HashSet
+        Set<Integer> set = new HashSet<>();
+        set.add(10);
+        set.add(20);
+        set.add(30);
+
+        // Getting Iterator from HashSet
+        Iterator<Integer> setIterator = set.iterator();
+
+        // Iterating through elements using Iterator
+        System.out.println("\nElements in HashSet using Iterator:");
+        while (setIterator.hasNext()) {
+            int number = setIterator.next();
+            System.out.println(number);
+        }
+
+        // Example with HashMap
+        Map<String, Integer> map = new HashMap<>();
+        map.put("One", 1);
+        map.put("Two", 2);
+        map.put("Three", 3);
+
+        // Getting Iterator from HashMap key set
+        Iterator<String> mapIterator = map.keySet().iterator();
+
+        // Iterating through keys using Iterator
+        System.out.println("\nKeys in HashMap using Iterator:");
+        while (mapIterator.hasNext()) {
+            String key = mapIterator.next();
+            System.out.println(key + " : " + map.get(key));
+        }
+    }
+}
