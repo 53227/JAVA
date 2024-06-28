@@ -1,0 +1,25 @@
+import java.util.StringTokenizer;
+
+public class StringTokenizerExample {
+
+    public static void main(String[] args) {
+        String sentence = "Java is a widely used programming language";
+        
+        // Creating StringTokenizer with default delimiter (space)
+        StringTokenizer tokenizer = new StringTokenizer(sentence);
+
+        // Iterating through tokens
+        while (tokenizer.hasMoreTokens()) {
+            System.out.println(tokenizer.nextToken());
+        }
+
+        // Using a custom delimiter (e.g., comma)
+        String numbers = "1,2,3,4,5";
+        StringTokenizer customTokenizer = new StringTokenizer(numbers, ",");
+
+        // Iterating through tokens with custom delimiter
+        while (customTokenizer.hasMoreTokens()) {
+            System.out.println(customTokenizer.nextToken());
+        }
+    }
+}
