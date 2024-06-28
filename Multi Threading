@@ -1,0 +1,47 @@
+// Example class implementing Runnable interface
+class MyRunnable implements Runnable {
+
+    @Override
+    public void run() {
+        // Task that the thread will execute
+        for (int i = 1; i <= 5; i++) {
+            System.out.println(Thread.currentThread().getName() + ": " + i);
+
+            try {
+                // Adding a small delay to demonstrate thread execution
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
+
+public class MultiThreadingExample {
+
+    public static void main(String[] args) {
+        // Creating instances of the runnable task
+        MyRunnable runnable1 = new MyRunnable();
+        MyRunnable runnable2 = new MyRunnable();
+
+        // Creating threads and assigning tasks
+        Thread thread1 = new Thread(runnable1, "Thread 1");
+        Thread thread2 = new Thread(runnable2, "Thread 2");
+
+        // Starting threads
+        thread1.start();
+        thread2.start();
+
+        // Main thread continues to execute independently
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Main Thread: " + i);
+
+            try {
+                // Adding a small delay to demonstrate main thread execution
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                System.out.println(e);
+            }
+        }
+    }
+}
