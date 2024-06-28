@@ -1,0 +1,68 @@
+// Interface defining methods for a Shape
+interface Shape {
+    // Abstract method to calculate area
+    double calculateArea();
+
+    // Abstract method to calculate perimeter
+    double calculatePerimeter();
+}
+
+// Class representing a Circle implementing Shape interface
+class Circle implements Shape {
+    private double radius;
+
+    // Constructor to initialize radius
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Implementation of calculateArea method for Circle
+    @Override
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    // Implementation of calculatePerimeter method for Circle
+    @Override
+    public double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+// Class representing a Rectangle implementing Shape interface
+class Rectangle implements Shape {
+    private double length;
+    private double width;
+
+    // Constructor to initialize length and width
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Implementation of calculateArea method for Rectangle
+    @Override
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Implementation of calculatePerimeter method for Rectangle
+    @Override
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+public class InterfaceExample {
+    public static void main(String[] args) {
+        // Create objects of Circle and Rectangle
+        Circle circle = new Circle(5);
+        Rectangle rectangle = new Rectangle(4, 6);
+
+        // Calculate and print areas and perimeters
+        System.out.println("Area of Circle: " + circle.calculateArea());
+        System.out.println("Perimeter of Circle: " + circle.calculatePerimeter());
+        System.out.println("Area of Rectangle: " + rectangle.calculateArea());
+        System.out.println("Perimeter of Rectangle: " + rectangle.calculatePerimeter());
+    }
+}
