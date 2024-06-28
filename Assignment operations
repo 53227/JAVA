@@ -1,0 +1,47 @@
+public class AssignmentOperations {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 5;
+
+        // Basic assignment
+        int result = a + b;
+        System.out.println("a + b = " + result); // Output: a + b = 15
+
+        // Compound assignment
+        result += 5; // equivalent to result = result + 5;
+        System.out.println("result += 5: " + result); // Output: result += 5: 20
+
+        result -= 3; // equivalent to result = result - 3;
+        System.out.println("result -= 3: " + result); // Output: result -= 3: 17
+
+        result *= 2; // equivalent to result = result * 2;
+        System.out.println("result *= 2: " + result); // Output: result *= 2: 34
+
+        result /= 4; // equivalent to result = result / 4;
+        System.out.println("result /= 4: " + result); // Output: result /= 4: 8
+
+        result %= 3; // equivalent to result = result % 3;
+        System.out.println("result %= 3: " + result); // Output: result %= 3: 2
+
+        // Bitwise assignment
+        int bitmask = 0x0F;
+        int num = 0x2222;
+        num &= bitmask; // equivalent to num = num & bitmask;
+        System.out.println("num &= bitmask: " + num); // Output: num &= bitmask: 2
+
+        num |= bitmask; // equivalent to num = num | bitmask;
+        System.out.println("num |= bitmask: " + num); // Output: num |= bitmask: 15
+
+        num ^= bitmask; // equivalent to num = num ^ bitmask;
+        System.out.println("num ^= bitmask: " + num); // Output: num ^= bitmask: 13
+
+        num <<= 1; // equivalent to num = num << 1;
+        System.out.println("num <<= 1: " + num); // Output: num <<= 1: 26
+
+        num >>= 2; // equivalent to num = num >> 2;
+        System.out.println("num >>= 2: " + num); // Output: num >>= 2: 6
+
+        num >>>= 1; // equivalent to num = num >>> 1;
+        System.out.println("num >>>= 1: " + num); // Output: num >>>= 1: 3
+    }
+}
