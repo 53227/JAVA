@@ -1,0 +1,26 @@
+public class GarbageCollectionExample {
+
+    public static void main(String[] args) {
+        // Creating objects
+        GarbageCollectionExample obj1 = new GarbageCollectionExample();
+        GarbageCollectionExample obj2 = new GarbageCollectionExample();
+        GarbageCollectionExample obj3 = new GarbageCollectionExample();
+
+        // Assigning obj2 to obj1 (now obj1 and obj3 are eligible for garbage collection)
+        obj1 = obj2;
+
+        // Making obj3 eligible for garbage collection
+        obj3 = null;
+
+        // Requesting JVM for running Garbage Collector
+        System.gc();
+
+        System.out.println("Garbage Collection Example");
+    }
+
+    // Finalize method is called on object destruction
+    @Override
+    protected void finalize() throws Throwable {
+        System.out.println("Garbage Collection Example object is destroyed.");
+    }
+}
